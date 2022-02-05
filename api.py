@@ -1,5 +1,4 @@
 from flask import Blueprint, request, jsonify
-from datetime import datetime
 from .src.orders import making_response
 from .src.detecting import check_rain
 from .src.season import process_data
@@ -50,7 +49,6 @@ def season_problem():
 
 @api.route('/customer-orders')
 def customer_order():
-    given_status = {'SHIPPED', 'CANCELLED', 'PENDING'}
     my_data = [
         {'customer_order': 'ORD_1567', 'item_name': 'LAPTOP', 'status': 'SHIPPED' },
         {'customer_order': 'ORD_1567', 'item_name': 'MOUSE', 'status': 'SHIPPED' },
